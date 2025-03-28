@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left: 32%;
+            background-image: url(https://img.freepik.com/premium-photo/spring-time-change-background_136595-23446.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+            margin-top: 3%;
+        }
+        span{
+            font-size: 10rem;
+        }
+        #day{
+            font-size: 5rem;
+            margin-left: 18%;
+        }
+
+    </style>
+</head>
+<body>
+    <span id="hours">00</span><span>:</span>
+    <span id="min">00</span><span>:</span>
+    <span id="sec">00</span>
+    <div>
+        <span id="day"></span>
+    </div>
+    <script>
+       function fun(){
+            let date=new Date()
+            let hours=document.getElementById("hours")
+            let min=document.getElementById("min")
+            let sec=document.getElementById("sec")
+            let day=document.getElementById("day")
+            hours.innerText=date.getHours()
+            min.innerText=date.getMinutes()
+            sec.innerText=date.getSeconds()
+            let arr=["sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+            day.innerText=arr[date.getDay()]
+            day.style.color="orange";
+    
+            // console.log(day)
+            
+        }
+        setInterval(fun,1000)
+
+        
+    </script>
+</body>
+</html>
